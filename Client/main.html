@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="author" content="Severin Ulrich"/>
+<title>Grundgeruest 0.01</title>
+<link rel="stylesheet" type="text/css" href="main.css" />
+
+</head>
+<body>
+<div id="header">
+</div>
+
+
+<div id="mainbar">
+
+	<ul>
+		<li><a href="home.html">Artikel</a></li>
+		<li><a href="browse.html">Datenbank</a></li>
+		<li><a href="gallery.html">Lager</a></li>
+		<li><a href="upload.html">Artikelsuche</a></li>
+		<li><a href="login.html">Login</a></li>
+	</ul>
+</div>
+
+<div id="maincontent">
+	<script>
+	'use strict';
+	var Artikel = new Array();
+
+	    Artikel[0] = new Object();
+	    Artikel[0]["Name"] = "Porsche 911";
+	    Artikel[0]["Anzahl"] = 5;
+	    Artikel[0]["EAN"] = 1324567891234;
+	    Artikel[0]["UVP"] = 199000;
+
+	    Artikel[1] = new Object();
+	    Artikel[1]["Name"] = "Müllermilch";
+	    Artikel[1]["Anzahl"] =498;
+	    Artikel[1]["EAN"] = 4567345031245;
+	    Artikel[1]["UVP"] = 4.99;
+
+	    Artikel[2] = new Object();
+	    Artikel[2]["Name"] = "Hundefutter";
+	    Artikel[2]["Anzahl"] = 33;
+	    Artikel[2]["EAN"] = 8945832142567;
+	    Artikel[2]["UVP"] = 9.99;
+
+
+	function init() {
+	  var elem = document.getElementById('button');
+	  elem.addEventListener('click', ausgeben);
+	}
+
+		function ausgeben() {
+			var container = document.getElementById("ausgabe"),
+				dl;
+
+			if (container) {
+
+				dl = container.appendChild(
+					document.createElement("dl")
+				);
+
+				Artikel.forEach(function (m, i) {
+
+					var dd, dt, eigenschaft;
+
+					dt = document.createElement("dt");
+					dt.innerHTML = "Artikel " + (i+1);
+
+					dl.appendChild(dt);
+
+					for (eigenschaft in m) {
+
+						dd = document.createElement("dd");
+						dd.innerHTML = eigenschaft + ": " + m[eigenschaft];
+
+						dl.appendChild(dd);
+					}
+				});
+			}
+		}
+
+	document.addEventListener('DOMContentLoaded', init);
+	</script>
+	<h1>Artikelprogramm v0.01</h1>
+	    <main>
+	    <button type="button" id="button" >Artiel anzeigen</button>
+	    <div id="ausgabe"></div></p>
+	    <button type="button" id="button" >Artiel erstellen</button>
+	  </main>
+
+
+
+
+
+</div>
+
+
+<div id="bottomline">
+	<ul>
+		<li><a href="contact.html">contact</a></li>
+		<li><a href="termsofservice.html">terms of service</a></li>
+		<li><a href="privacy.html">privacy</a></li>
+		<li><a href="feedback.html">feedback</a></li>
+	</ul>
+</div>
+
+</body>
+
+</html>
