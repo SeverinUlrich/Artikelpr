@@ -1,5 +1,5 @@
 body {
-  background: pink;
+  background: white;
 }
 
 * {
@@ -10,11 +10,12 @@ body {
 }
 
 nav {
-	display: inline;
-	float:right;
+	display:inline;
+  float:left;
   width: 100%;
   background: grey;
   font-size: 16px;
+  text-align: center;
 }
 
 nav ul {
@@ -96,4 +97,16 @@ nav ul li:hover > ul {
 nav ul ul li:hover > ul {
   top: 0;
   left: 200px;
+}
+
+mainframe {
+  padding: 10px;
+  margin-left: 10px;
+  text-align: center
+}
+
+ausgabe {
+
+
+
 }
